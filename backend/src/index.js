@@ -20,8 +20,8 @@ mongoose.connect(mongo_connection, {
 });
 
 app
+    .use(cors())
     .use(express.json())
-    .use(routes)
-    .use(cors());
+    .use(routes);
 
 app.listen(port, console.log(`Backend running on port ${port}`));
