@@ -10,7 +10,7 @@ const routes = Router();
 
 routes
     .get('/developers', DeveloperController.index)
-    .post('/developers', DeveloperController.create);
+    .post('/developers', DeveloperController.store);
 
 routes
     .get('/search-developers', SearchController.index);
