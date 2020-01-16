@@ -2,6 +2,7 @@ const
     express = require('express'),
     mongoose = require('mongoose'),
     dotenv = require('dotenv'),
+    cors = require('cors'),
     routes = require('./routes');
 
 const app = express();
@@ -20,6 +21,7 @@ mongoose.connect(mongo_connection, {
 
 app
     .use(express.json())
-    .use(routes);
+    .use(routes)
+    .use(cors());
 
 app.listen(port, console.log(`Backend running on port ${port}`));
